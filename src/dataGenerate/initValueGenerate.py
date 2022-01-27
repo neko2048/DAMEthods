@@ -9,6 +9,16 @@ sys.path.insert(0, path)
 from parameterControl import *
 from lorenz96.lorenz96 import Lorenz96
 
+
+
+
+
+
+
+
+
+
+
 class dataGenerator:
     def __init__(self, NtimeStep):
         self.Ngrid = Ngrid
