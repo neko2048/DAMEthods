@@ -95,13 +95,13 @@ if __name__ == "__main__":
 
 
     if isSave:
-        pathlib.Path("{}/initRecord/{}".format(observationOperatorType, subFolderName)).mkdir(parents=True, exist_ok=True)
-        np.savetxt('{}/initRecord/{}/truthState.txt'.format(observationOperatorType, subFolderName), truthState)
-        np.savetxt('{}/initRecord/{}/sparseTruthState.txt'.format(observationOperatorType, subFolderName), sparseTruthState)
-        np.savetxt('{}/initRecord/{}/initAnalysisState.txt'.format(observationOperatorType, subFolderName), initAnalysisState)
-        np.savetxt('{}/initRecord/{}/fullObservationState.txt'.format(observationOperatorType, subFolderName), fullObservationState)
-        np.savetxt('{}/initRecord/{}/sparseObservationState.txt'.format(observationOperatorType, subFolderName), sparseObservationState)
-        np.savetxt('{}/initRecord/{}/initEC.txt'.format(observationOperatorType, subFolderName), observationEC)
-        np.savetxt('{}/initRecord/observationOperator.txt'.format(observationOperatorType), observationOperator)
+        Path(parentDir+"data/{}/initRecord/{}".format(observationOperatorType, subFolderName)).mkdir(parents=True, exist_ok=True)
+        np.savetxt(parentDir+'data/{}/initRecord/{}/truthState.txt'.format(observationOperatorType, subFolderName), truthState)
+        np.savetxt(parentDir+'data/{}/initRecord/{}/sparseTruthState.txt'.format(observationOperatorType, subFolderName), sparseTruthState)
+        np.savetxt(parentDir+'data/{}/initRecord/{}/initAnalysisState.txt'.format(observationOperatorType, subFolderName), initAnalysisState)
+        np.savetxt(parentDir+'data/{}/initRecord/{}/fullObservationState.txt'.format(observationOperatorType, subFolderName), fullObservationState)
+        np.savetxt(parentDir+'data/{}/initRecord/{}/sparseObservationState.txt'.format(observationOperatorType, subFolderName), sparseObservationState)
+        np.savetxt(parentDir+'data/{}/initRecord/{}/initEC.txt'.format(observationOperatorType, subFolderName), observationEC)
+        np.savetxt(parentDir+'data/{}/initRecord/observationOperator.txt'.format(observationOperatorType), observationOperator)
         print("saved successfully in ./{}/initRecord/{}".format(observationOperatorType, subFolderName))
 

@@ -1,4 +1,5 @@
 import numpy as np
+from pathlib import Path
 # ========== parameters
 Ngrid = 40
 force = 8.
@@ -7,7 +8,7 @@ dT = 0.05
 intensedT = 0.01
 
 dx = 1
-isSave = False
+isSave = True
 noiseType = "Mixing"
 noiseScale = 0.2
 gaussianRatio = 0.5
@@ -29,3 +30,5 @@ NtimeStep = len(timeArray)
 intenseTimeArray = np.arange(0, timeLength+intensedT, intensedT)
 NwindowSample = int(dT/intensedT) # used in 4DVar
 intesneNtimeStep = len(intenseTimeArray)
+
+parentDir = str(Path(__file__).parent.absolute())[:-3]

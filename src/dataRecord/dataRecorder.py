@@ -1,3 +1,4 @@
+import pathlib
 from pathlib import Path
 import sys
 path = str(Path(Path(__file__).parent.absolute()).parent.absolute())
@@ -31,20 +32,17 @@ class RecordCollector:
         self.MeanError[tidx] = DAClass.MeanError
 
     def checkDirExists(self):
-        goalDir = "{}/{}_record".format(observationOperatorType, self.methodName)
+        goalDir = parentDir+"data/{}/{}_record".format(observationOperatorType, self.methodName)
         return pathlib.Path(goalDir).is_dir()
 
     def makeDir(self):
-        goalDir = "{}/{}_record".format(observationOperatorType, self.methodName)
+        goalDir = parentDir+"data/{}/{}_record".format(observationOperatorType, self.methodName)
         pathlib.Path(goalDir).mkdir(parents=True, exist_ok=True)
 
     def saveToTxt(self):
-        np.savetxt("{}/{}_record/{}_analysisState.txt".format(observationOperatorType, self.methodName, subFolderName), self.analysisState)
-        #np.savetxt("{}_record/{}_analysisEC.txt".format(self.methodName, self.noiseType), self.analysisEC)
-        np.savetxt("{}/{}_record/{}_forecastState.txt".format(observationOperatorType, self.methodName, subFolderName), self.forecastState)
-        #np.savetxt("{}_record/{}_forecastEC.txt".format(self.methodName, self.noiseType), self.forecastEC)
-        np.savetxt("{}/{}_record/{}_observationState.txt".format(observationOperatorType, self.methodName, subFolderName), self.observationState)
-        #np.savetxt("{}/{}_observationEC.txt".format(self.methodName, self.noiseType), self.observationEC)
-        np.savetxt("{}/{}_record/{}_RMSE.txt".format(observationOperatorType, self.methodName, subFolderName), self.RMSE)
-        np.savetxt("{}/{}_record/{}_MeanError.txt".format(observationOperatorType, self.methodName, subFolderName), self.MeanError)
+        np.savetxt(parentDir+"data/{}/{}_record/{}_analysisState.txt".format(observationOperatorType, self.methodName, subFolderName), self.analysisState)
+        np.savetxt(parentDir+"data/{}/{}_record/{}_forecastState.txt".format(observationOperatorType, self.methodName, subFolderName), self.forecastState)
+        np.savetxt(parentDir+"data/{}/{}_record/{}_observationState.txt".format(observationOperatorType, self.methodName, subFolderName), self.observationState)
+        np.savetxt(parentDir+"data/{}/{}_record/{}_RMSE.txt".format(observationOperatorType, self.methodName, subFolderName), self.RMSE)
+        np.savetxt(parentDir+"data/{}/{}_record/{}_MeanError.txt".format(observationOperatorType, self.methodName, subFolderName), self.MeanError)
         print("Save successfully")
