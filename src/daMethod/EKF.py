@@ -1,3 +1,6 @@
+# daMethod/EKF.py
+# Fu-Sheng Kao
+# >>>>>>>>>> imported packages >>>>>>>>>>
 import numpy as np
 from scipy.integrate import ode
 
@@ -8,12 +11,7 @@ sys.path.insert(0, path)
 from parameterControl import *
 from lorenz96.lorenz96 import Lorenz96
 from dataRecord.dataRecorder import RecordCollector
-
-
-
-
-
-
+# <<<<<<<<<< imported packages <<<<<<<<<<
 
 
 
@@ -22,7 +20,7 @@ from dataRecord.dataRecorder import RecordCollector
 class ExtKalFilter:
     def __init__(self, xInitAnalysis):
         self.xInitAnalysis = xInitAnalysis
-        self.obsOperator = np.loadtxt("{}/initRecord/observationOperator.txt".format(observationOperatorType))
+        self.obsOperator = np.loadtxt(parentDir+"data/{}/initRecord/observationOperator.txt".format(observationOperatorType))
 
     def forceODE(self, x, force=force):
         return (np.roll(x, -1) - np.roll(x, 2)) * np.roll(x, 1) - x + force

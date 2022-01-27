@@ -1,3 +1,6 @@
+# daMethod/noDA.py
+# Fu-Sheng Kao
+# >>>>>>>>>> imported packages >>>>>>>>>>
 import numpy as np
 from scipy.integrate import ode
 import copy
@@ -10,11 +13,7 @@ sys.path.insert(0, path)
 from parameterControl import *
 from lorenz96.lorenz96 import Lorenz96
 from dataRecord.dataRecorder import RecordCollector
-
-
-
-
-
+# <<<<<<<<<< imported packages <<<<<<<<<<
 
 
 
@@ -24,7 +23,7 @@ from dataRecord.dataRecorder import RecordCollector
 class NODA:
     def __init__(self, xInitAnalysis):
         self.xInitAnalysis = xInitAnalysis
-        self.obsOperator = np.loadtxt("{}/initRecord/observationOperator.txt".format(observationOperatorType))
+        self.obsOperator = np.loadtxt(parentDir+"data/{}/initRecord/observationOperator.txt".format(observationOperatorType))
 
     # forecast
     def getForecastState(self, analysisState, nowT):

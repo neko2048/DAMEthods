@@ -1,4 +1,4 @@
-# daMethod/variationalMethods.py
+# daMethod/4DVar.py
 # Fu-Sheng Kao
 # >>>>>>>>>> imported packages >>>>>>>>>>
 import numpy as np
@@ -20,14 +20,10 @@ from dataRecord.dataRecorder import RecordCollector
 
 
 
-
-
-
-
 class fourDVar:
     def __init__(self, xInitAnalysis):
         self.xInitAnalysis = xInitAnalysis
-        self.obsOperator = np.loadtxt("{}/initRecord/observationOperator.txt".format(observationOperatorType))
+        self.obsOperator = np.loadtxt(parentDir+"data/{}/initRecord/observationOperator.txt".format(observationOperatorType))
 
     def getObservationFromWindow(self, observationState, tidx, NwindowSample=NwindowSample):
         """including head and tail"""

@@ -40,6 +40,3 @@ intesneNtimeStep = len(intenseTimeArray)
 # >>>>>>>>>> I have no idea why they exist >>>>>>>>>>
 dx = 1
 # <<<<<<<<<< I have no idea why they exist <<<<<<<<<<
-
-
-

@@ -1,4 +1,4 @@
-# daMethod/variationalMethods.py
+# daMethod/3DVar.py
 # Fu-Sheng Kao
 # >>>>>>>>>> imported packages >>>>>>>>>>
 import numpy as np
@@ -14,10 +14,6 @@ from dataGenerate import initValueGenerate
 from parameterControl import *
 from dataRecord.dataRecorder import RecordCollector
 # <<<<<<<<<< imported packages <<<<<<<<<<
-
-
-
-
 
 
 
@@ -71,7 +67,7 @@ class threeDVar:
 class increThreeDVar:
     def __init__(self, xInitAnalysis):
         self.xInitAnalysis = xInitAnalysis
-        self.obsOperator = np.loadtxt("{}/initRecord/observationOperator.txt".format(observationOperatorType))
+        self.obsOperator = np.loadtxt(parentDir+"data/{}/initRecord/observationOperator.txt".format(observationOperatorType))
 
     def costFunction(self, analysisIncrement, innovation, backgroundEC, observationEC):
         H = self.obsOperator
