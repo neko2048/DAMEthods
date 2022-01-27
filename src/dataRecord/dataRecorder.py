@@ -1,5 +1,8 @@
+from pathlib import Path
+import sys
+path = str(Path(Path(__file__).parent.absolute()).parent.absolute())
+sys.path.insert(0, path)
 from parameterControl import *
-import pathlib
 
 class RecordCollector:
     def __init__(self, methodName, noiseType):
